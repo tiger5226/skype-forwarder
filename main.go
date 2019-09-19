@@ -40,7 +40,7 @@ func main() {
 
 	// Set up the HTTP server:
 	server := &http.Server{}
-	server.Addr = ":8080"
+	server.Addr = ":7070"
 	server.Handler = serverMUX
 	server.SetKeepAlivesEnabled(true)
 	server.ReadTimeout = 15 * time.Minute
@@ -49,7 +49,7 @@ func main() {
 	actions.ConfigureAPIServer()
 
 	// Start the server:
-	logrus.Printf("Listening on port %v", 9999)
+	logrus.Printf("Listening on port %v", 7070)
 	go func() {
 		err := server.ListenAndServeTLS("cert.pem", "key.pem")
 		if err != nil {
