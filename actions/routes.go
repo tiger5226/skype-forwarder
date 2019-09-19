@@ -3,6 +3,8 @@ package actions
 import (
 	"net/http"
 
+	"github.com/tiger5226/skype-forwarder/skype"
+
 	"github.com/lbryio/lbry.go/extras/api"
 	"github.com/tiger5226/skype-forwarder/orderedmap"
 )
@@ -23,6 +25,7 @@ func GetRoutes() *Routes {
 
 	routes.Set("/", Root)
 	routes.Set("/test", Test)
+	routes.Set("/skype", skype.SendMessage)
 
 	return &routes
 }

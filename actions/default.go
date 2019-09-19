@@ -15,7 +15,7 @@ import (
 // RootHandler is the default handler
 func Root(r *http.Request) api.Response {
 	if r.URL.Path == "/" {
-		return api.Response{Data: "Welcome to Simple File Transfer"}
+		return api.Response{Data: "Welcome to Skype Forwarder"}
 	}
 	return api.Response{Status: http.StatusNotFound, Error: errors.Err("404 Not Found")}
 }
